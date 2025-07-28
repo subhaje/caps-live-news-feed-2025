@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="lg.css" /> -->
     <!-- <link rel="stylesheet" href="accurex.css" /> -->
     <!-- <link rel="stylesheet" href="airolite.css" /> -->
-    <link rel="stylesheet" href="greenheck.css" />
+    <link id="theme-stylesheet" rel="stylesheet" href="greenheck.css" />
 
     <style>
       .cj-tutorial-list li,
@@ -179,6 +179,36 @@
         background: var(--primary);
         color: var(--secondary);
         padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .cj-theme-switcher-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .cj-theme-label {
+        color: var(--secondary);
+        margin-right: 8px;
+        font-size: 14px;
+        font-family: "Helvetica-Neue-Roman", system-ui, sans-serif;
+        font-weight: 400;
+      }
+
+      .cj-theme-select {
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px solid var(--secondary);
+        background-color: var(--primary);
+        color: var(--secondary);
+        font-family: "Helvetica-Neue-Roman", system-ui, sans-serif;
+      }
+
+      .cj-theme-select:focus {
+        outline: 3px solid var(--focus);
+        outline-offset: 1px;
       }
 
       .cj-container {
@@ -509,6 +539,21 @@
     >
     <header role="banner" class="cj-header">
       <h1 class="cj-title">CAPS<sup class="cj-sup-r">®</sup> Live News Feed</h1>
+      <div class="cj-theme-switcher-container">
+        <label for="theme-select" class="cj-theme-label">Brand:</label>
+        <select name="themes" id="theme-select" class="cj-theme-select">
+          <option value="accurex.css">Accurex</option>
+          <option value="airolite.css">Airolite</option>
+          <option value="Dodge.css">Dodge</option>
+          <option value="greenheck.css" selected>Greenheck</option>
+          <option value="Innovent.css">Innovent</option>
+          <option value="Larkin.css">Larkin</option>
+          <option value="LG.css">LG</option>
+          <option value="PremiSys.css">PremiSys</option>
+          <option value="Valent.css">Valent</option>
+          <option value="Venco.css">Venco</option>
+        </select>
+      </div>
     </header>
     <div class="cj-main-container">
       <div class="cj-container">
@@ -697,5 +742,24 @@
         </footer>
       </aside>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeSelect = document.getElementById("theme-select");
+        const themeStylesheet = document.getElementById("theme-stylesheet");
+
+        const savedTheme = localStorage.getItem("caps-theme");
+
+        if (savedTheme) {
+          themeStylesheet.setAttribute("href", savedTheme);
+          themeSelect.value = savedTheme;
+        }
+
+        themeSelect.addEventListener("change", function () {
+          const selectedTheme = themeSelect.value;
+          themeStylesheet.setAttribute("href", selectedTheme);
+          localStorage.setItem("caps-theme", selectedTheme);
+        });
+      });
+    </script>
   </body>
 </html>
