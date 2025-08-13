@@ -5,7 +5,7 @@
   padding-bottom: 4px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 .cj-product-list li {
@@ -31,8 +31,7 @@ html {
 
 @font-face {
   font-family: "Helvetica-Neue-UltraLightItalic";
-  src: url("./helvetica-neue-5/HelveticaNeueUltraLightItalic.otf")
-    format("opentype");
+  src: url("./helvetica-neue-5/HelveticaNeueUltraLightItalic.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
 }
@@ -88,8 +87,7 @@ html {
 
 @font-face {
   font-family: "Helvetica-Neue-MediumItalic";
-  src: url("./helvetica-neue-5/HelveticaNeueMediumItalic.otf")
-    format("opentype");
+  src: url("./helvetica-neue-5/HelveticaNeueMediumItalic.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
 }
@@ -304,6 +302,7 @@ html {
 .cj-tutorial-link {
   color: var(--link);
   text-decoration: none;
+  padding-top: 3px;
 }
 
 .cj-tutorial-link:focus {
@@ -416,6 +415,7 @@ html {
 }
 
 @media (max-width: 600px) {
+
   .cj-header,
   .cj-container,
   .cj-aside,
@@ -456,4 +456,423 @@ html {
 
 .cj-release-item {
   margin: 7px 0 18px 0;
+}
+
+/* Icon Showcase Section */
+.cj-icon-showcase-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--cj-bg-secondary, #f8f9fa);
+  border-radius: 8px;
+}
+
+.cj-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cj-icon-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--cj-bg-primary, #ffffff);
+  border-radius: 8px;
+  border: 1px solid var(--cj-border-color, #e9ecef);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cj-icon-example:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cj-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: var(--cj-primary-color, #007bff);
+  stroke-width: 1.5;
+}
+
+.cj-icon-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--cj-text-primary, #212529);
+}
+
+.cj-icon-desc {
+  font-size: 0.9rem;
+  color: var(--cj-text-secondary, #6c757d);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Update existing icon styles */
+.cj-tutorial-icon,
+.cj-video-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--cj-primary-color, #007bff);
+  stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+/* Document type specific colors */
+.cj-tutorial-icon[data-lucide="file-text"] {
+  color: #dc3545;
+  /* Red for PDF/DOC */
+}
+
+.cj-tutorial-icon[data-lucide="presentation"] {
+  color: #fd7e14;
+  /* Orange for PowerPoint */
+}
+
+.cj-tutorial-icon[data-lucide="table"] {
+  color: #28a745;
+  /* Green for Excel */
+}
+
+/* Hover effects for document icons */
+.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="file-text"] {
+  color: #c82333;
+  /* Darker red on hover */
+}
+
+.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="presentation"] {
+  color: #e55a00;
+  /* Darker orange on hover */
+}
+
+.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="table"] {
+  color: #1e7e34;
+  /* Darker green on hover */
+}
+
+.cj-tutorial-item,
+.cj-video-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cj-icon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cj-icon-example {
+    padding: 1rem;
+  }
+
+  .cj-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Icon Examples List */
+.cj-icon-examples-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.cj-icon-example-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--cj-bg-secondary, #f8f9fa);
+  border-radius: 6px;
+  border: 1px solid var(--cj-border-color, #e9ecef);
+  transition: background-color 0.2s ease;
+}
+
+.cj-icon-example-item:hover {
+  background: var(--cj-bg-hover, #e9ecef);
+}
+
+.cj-icon-small {
+  width: 20px;
+  height: 20px;
+  color: var(--cj-primary-color, #007bff);
+  stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+.cj-icon-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--cj-text-primary, #212529);
+  min-width: 80px;
+}
+
+.cj-icon-desc {
+  font-size: 0.8rem;
+  color: var(--cj-text-secondary, #6c757d);
+  line-height: 1.3;
+}
+
+/* Responsive adjustments for icon examples */
+@media (max-width: 768px) {
+  .cj-icon-examples-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cj-icon-example-item {
+    padding: 0.5rem;
+  }
+
+  .cj-icon-name {
+    min-width: 60px;
+    font-size: 0.85rem;
+  }
+
+  .cj-icon-desc {
+    font-size: 0.75rem;
+  }
+}
+
+/* Icon Library Comparison */
+.cj-icon-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cj-icon-library {
+  padding: 1.5rem;
+  background: var(--cj-bg-secondary, #f8f9fa);
+  border-radius: 8px;
+  border: 1px solid var(--cj-border-color, #e9ecef);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cj-icon-library:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cj-library-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--cj-text-primary, #212529);
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid;
+}
+
+/* Library-specific title colors */
+.cj-icon-library:nth-child(1) .cj-library-title {
+  border-bottom-color: #007bff;
+  /* Lucide - Blue */
+}
+
+.cj-icon-library:nth-child(2) .cj-library-title {
+  border-bottom-color: #6f42c1;
+  /* Feather - Purple */
+}
+
+
+
+.cj-icon-library:nth-child(4) .cj-library-title {
+  border-bottom-color: #fd7e14;
+  /* Bootstrap - Orange */
+}
+
+
+
+
+
+.cj-icon-library:nth-child(7) .cj-library-title {
+  border-bottom-color: #e83e8c;
+  /* Font Awesome - Pink */
+}
+
+.cj-icon-library:nth-child(8) .cj-library-title {
+  border-bottom-color: #20c997;
+  /* Remix - Teal */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cj-icon-library:nth-child(6) .cj-library-title {
+  border-bottom-color: #319795;
+  /* Chakra UI - Teal */
+}
+
+.cj-icon-library:nth-child(7) .cj-library-title {
+  border-bottom-color: #1976d2;
+  /* MUI - Blue */
+}
+
+.cj-icon-library:nth-child(8) .cj-library-title {
+  border-bottom-color: #7c3aed;
+  /* Heroicons v1 - Violet */
+}
+
+.cj-icon-library:nth-child(9) .cj-library-title {
+  border-bottom-color: #059669;
+  /* Feather v4 - Emerald */
+}
+
+.cj-icon-library:nth-child(10) .cj-library-title {
+  border-bottom-color: #0891b2;
+  /* Lucide v0.263 - Sky */
+}
+
+.cj-icon-examples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cj-icon-example-compare {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--cj-border-color, #e9ecef);
+}
+
+.cj-icon-example-compare:last-child {
+  border-bottom: none;
+}
+
+.cj-compare-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--cj-primary-color, #007bff);
+  stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+/* Library-specific icon colors */
+.cj-compare-icon.feather {
+  color: #6f42c1;
+  /* Purple for Feather icons */
+}
+
+.cj-compare-icon.heroicon {
+  color: #dc3545;
+  /* Red for Heroicons */
+}
+
+.cj-compare-icon.bootstrap {
+  color: #fd7e14;
+  /* Orange for Bootstrap */
+  font-size: 20px;
+}
+
+
+
+.cj-compare-icon.fontawesome {
+  color: #e83e8c;
+  /* Pink for Font Awesome */
+  font-size: 20px;
+}
+
+.cj-compare-icon.remix {
+  color: #20c997;
+  /* Teal for Remix Icons */
+  font-size: 20px;
+}
+
+/* Icon type-specific colors (applies to all libraries) */
+.cj-icon-example-compare:nth-child(1) .cj-compare-icon {
+  color: #6c757d !important;
+  /* Gray for blank/generic files */
+}
+
+.cj-icon-example-compare:nth-child(2) .cj-compare-icon {
+  color: #dc3545 !important;
+  /* Red for PDF documents */
+}
+
+.cj-icon-example-compare:nth-child(3) .cj-compare-icon {
+  color: #fd7e14 !important;
+  /* Orange for PowerPoint */
+}
+
+.cj-icon-example-compare:nth-child(4) .cj-compare-icon {
+  color: #0d6efd !important;
+  /* Blue for Word documents */
+}
+
+.cj-icon-example-compare:nth-child(5) .cj-compare-icon {
+  color: #28a745 !important;
+  /* Green for Excel */
+}
+
+.cj-icon-example-compare:nth-child(6) .cj-compare-icon {
+  color: #6f42c1 !important;
+  /* Purple for Video */
+}
+
+.cj-icon-example-compare:nth-child(7) .cj-compare-icon {
+  color: #17a2b8 !important;
+  /* Cyan for Arrow */
+}
+
+.cj-icon-example-compare:nth-child(8) .cj-compare-icon {
+  color: #6c757d !important;
+  /* Gray for Bullet */
+}
+
+.cj-icon-example-compare:nth-child(9) .cj-compare-icon {
+  color: #198754 !important;
+  /* Dark Green for Phone */
+}
+
+.cj-icon-example-compare:nth-child(10) .cj-compare-icon {
+  color: #fd7e14 !important;
+  /* Orange for External Link */
+}
+
+/* Hover effects for icon types */
+.cj-icon-example-compare:hover .cj-compare-icon {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* Responsive adjustments for icon comparison */
+@media (max-width: 1200px) {
+  .cj-icon-comparison-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .cj-icon-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cj-icon-library {
+    padding: 1rem;
+  }
 }
