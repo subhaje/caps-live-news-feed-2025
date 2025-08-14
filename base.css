@@ -4,7 +4,7 @@
   line-height: 22px;
   padding-bottom: 4px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 6px;
 }
 
@@ -523,33 +523,35 @@ html {
 }
 
 /* Document type specific colors */
-.cj-tutorial-icon[data-lucide="file-text"] {
+.cj-tutorial-icon.fa-file-pdf,
+.cj-tutorial-icon.fa-file-word {
   color: #dc3545;
   /* Red for PDF/DOC */
 }
 
-.cj-tutorial-icon[data-lucide="presentation"] {
+.cj-tutorial-icon.fa-file-powerpoint {
   color: #fd7e14;
   /* Orange for PowerPoint */
 }
 
-.cj-tutorial-icon[data-lucide="table"] {
+.cj-tutorial-icon.fa-file-excel {
   color: #28a745;
   /* Green for Excel */
 }
 
 /* Hover effects for document icons */
-.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="file-text"] {
+.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-pdf,
+.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-word {
   color: #c82333;
   /* Darker red on hover */
 }
 
-.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="presentation"] {
+.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-powerpoint {
   color: #e55a00;
   /* Darker orange on hover */
 }
 
-.cj-tutorial-item:hover .cj-tutorial-icon[data-lucide="table"] {
+.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-excel {
   color: #1e7e34;
   /* Darker green on hover */
 }
@@ -674,74 +676,9 @@ html {
 }
 
 /* Library-specific title colors */
-.cj-icon-library:nth-child(1) .cj-library-title {
-  border-bottom-color: #007bff;
-  /* Lucide - Blue */
-}
-
-.cj-icon-library:nth-child(2) .cj-library-title {
-  border-bottom-color: #6f42c1;
-  /* Feather - Purple */
-}
-
-
-
-.cj-icon-library:nth-child(4) .cj-library-title {
-  border-bottom-color: #fd7e14;
-  /* Bootstrap - Orange */
-}
-
-
-
-
-
-.cj-icon-library:nth-child(7) .cj-library-title {
+.cj-icon-library .cj-library-title {
   border-bottom-color: #e83e8c;
   /* Font Awesome - Pink */
-}
-
-.cj-icon-library:nth-child(8) .cj-library-title {
-  border-bottom-color: #20c997;
-  /* Remix - Teal */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cj-icon-library:nth-child(6) .cj-library-title {
-  border-bottom-color: #319795;
-  /* Chakra UI - Teal */
-}
-
-.cj-icon-library:nth-child(7) .cj-library-title {
-  border-bottom-color: #1976d2;
-  /* MUI - Blue */
-}
-
-.cj-icon-library:nth-child(8) .cj-library-title {
-  border-bottom-color: #7c3aed;
-  /* Heroicons v1 - Violet */
-}
-
-.cj-icon-library:nth-child(9) .cj-library-title {
-  border-bottom-color: #059669;
-  /* Feather v4 - Emerald */
-}
-
-.cj-icon-library:nth-child(10) .cj-library-title {
-  border-bottom-color: #0891b2;
-  /* Lucide v0.263 - Sky */
 }
 
 .cj-icon-examples {
@@ -771,23 +708,6 @@ html {
 }
 
 /* Library-specific icon colors */
-.cj-compare-icon.feather {
-  color: #6f42c1;
-  /* Purple for Feather icons */
-}
-
-.cj-compare-icon.heroicon {
-  color: #dc3545;
-  /* Red for Heroicons */
-}
-
-.cj-compare-icon.bootstrap {
-  color: #fd7e14;
-  /* Orange for Bootstrap */
-  font-size: 20px;
-}
-
-
 
 .cj-compare-icon.fontawesome {
   color: #e83e8c;
@@ -795,10 +715,44 @@ html {
   font-size: 20px;
 }
 
-.cj-compare-icon.remix {
-  color: #20c997;
-  /* Teal for Remix Icons */
-  font-size: 20px;
+.cj-pdf-color {
+  color: #dc3545 !important;
+}
+
+.cj-ppt-color {
+  color: #fd7e14 !important;
+}
+
+.cj-doc-color {
+  color: #0d6efd !important;
+}
+
+.cj-xls-color {
+  color: #28a745 !important;
+}
+
+.cj-video-color {
+  color: #6f42c1 !important;
+}
+
+.cj-arrow-color {
+  color: #015a9c !important;
+}
+
+.cj-bullet-color {
+  color: #015a9c !important;
+}
+
+.cj-phone-color {
+  color: #015a9c !important;
+}
+
+.cj-externallink-color {
+  color: #015a9c !important;
+}
+
+.cj-circle-color {
+  color: #015a9c !important;
 }
 
 /* Icon type-specific colors (applies to all libraries) */
