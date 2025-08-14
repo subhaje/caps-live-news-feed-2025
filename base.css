@@ -1,3 +1,7 @@
+a:hover {
+  text-decoration: underline;
+}
+
 .cj-tutorial-list li,
 .cj-video-list li {
   list-style: none;
@@ -146,6 +150,10 @@ html {
   background: var(--primary);
   color: var(--secondary);
   padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 24px;
 }
 
 .cj-container {
@@ -212,7 +220,8 @@ html {
 .cj-main-actions .cj-btn-primary:hover,
 .cj-main-actions .cj-btn-secondary:hover {
   background: var(--bgHover);
-  color: var(--link);
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 .cj-section-title,
@@ -303,6 +312,7 @@ html {
   color: var(--link);
   text-decoration: none;
   padding-top: 3px;
+  transition: all 0.2s ease;
 }
 
 .cj-tutorial-link:focus {
@@ -520,46 +530,58 @@ html {
   color: var(--cj-primary-color, #007bff);
   stroke-width: 1.5;
   flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.cj-tutorial-item:hover .cj-tutorial-icon,
+.cj-video-item:hover .cj-video-icon {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.cj-tutorial-item:hover .cj-tutorial-link {
+  text-decoration: underline;
 }
 
 /* Document type specific colors */
-.cj-tutorial-icon.fa-file-pdf,
-.cj-tutorial-icon.fa-file-word {
-  color: #dc3545;
-  /* Red for PDF/DOC */
+.cj-pdf-color {
+  color: #dc3545 !important;
 }
 
-.cj-tutorial-icon.fa-file-powerpoint {
-  color: #fd7e14;
-  /* Orange for PowerPoint */
+.cj-ppt-color {
+  color: #fd7e14 !important;
 }
 
-.cj-tutorial-icon.fa-file-excel {
-  color: #28a745;
-  /* Green for Excel */
+.cj-doc-color {
+  color: #0d6efd !important;
 }
 
-/* Hover effects for document icons */
-.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-pdf,
-.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-word {
-  color: #c82333;
-  /* Darker red on hover */
+.cj-xls-color {
+  color: #28a745 !important;
 }
 
-.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-powerpoint {
-  color: #e55a00;
-  /* Darker orange on hover */
+.cj-video-color {
+  color: #004aa2 !important;
 }
 
-.cj-tutorial-item:hover .cj-tutorial-icon.fa-file-excel {
-  color: #1e7e34;
-  /* Darker green on hover */
+.cj-arrow-color {
+  color: #004aa2 !important;
 }
 
-.cj-tutorial-item,
-.cj-video-item {
-  display: flex;
-  align-items: center;
+.cj-bullet-color {
+  color: #004aa2 !important;
+}
+
+.cj-phone-color {
+  color: #004aa2 !important;
+}
+
+.cj-externallink-color {
+  color: #004aa2 !important;
+}
+
+.cj-circle-color {
+  color: #004aa2 !important;
 }
 
 /* Responsive adjustments */
@@ -641,192 +663,5 @@ html {
 
   .cj-icon-desc {
     font-size: 0.75rem;
-  }
-}
-
-/* Icon Library Comparison */
-.cj-icon-comparison-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.cj-icon-library {
-  padding: 1.5rem;
-  background: var(--cj-bg-secondary, #f8f9fa);
-  border-radius: 8px;
-  border: 1px solid var(--cj-border-color, #e9ecef);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cj-icon-library:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.cj-library-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-  color: var(--cj-text-primary, #212529);
-  text-align: center;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid;
-}
-
-/* Library-specific title colors */
-.cj-icon-library .cj-library-title {
-  border-bottom-color: #e83e8c;
-  /* Font Awesome - Pink */
-}
-
-.cj-icon-examples {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.cj-icon-example-compare {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--cj-border-color, #e9ecef);
-}
-
-.cj-icon-example-compare:last-child {
-  border-bottom: none;
-}
-
-.cj-compare-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--cj-primary-color, #007bff);
-  stroke-width: 1.5;
-  flex-shrink: 0;
-}
-
-/* Library-specific icon colors */
-
-.cj-compare-icon.fontawesome {
-  color: #e83e8c;
-  /* Pink for Font Awesome */
-  font-size: 20px;
-}
-
-.cj-pdf-color {
-  color: #dc3545 !important;
-}
-
-.cj-ppt-color {
-  color: #fd7e14 !important;
-}
-
-.cj-doc-color {
-  color: #0d6efd !important;
-}
-
-.cj-xls-color {
-  color: #28a745 !important;
-}
-
-.cj-video-color {
-  color: #6f42c1 !important;
-}
-
-.cj-arrow-color {
-  color: #015a9c !important;
-}
-
-.cj-bullet-color {
-  color: #015a9c !important;
-}
-
-.cj-phone-color {
-  color: #015a9c !important;
-}
-
-.cj-externallink-color {
-  color: #015a9c !important;
-}
-
-.cj-circle-color {
-  color: #015a9c !important;
-}
-
-/* Icon type-specific colors (applies to all libraries) */
-.cj-icon-example-compare:nth-child(1) .cj-compare-icon {
-  color: #6c757d !important;
-  /* Gray for blank/generic files */
-}
-
-.cj-icon-example-compare:nth-child(2) .cj-compare-icon {
-  color: #dc3545 !important;
-  /* Red for PDF documents */
-}
-
-.cj-icon-example-compare:nth-child(3) .cj-compare-icon {
-  color: #fd7e14 !important;
-  /* Orange for PowerPoint */
-}
-
-.cj-icon-example-compare:nth-child(4) .cj-compare-icon {
-  color: #0d6efd !important;
-  /* Blue for Word documents */
-}
-
-.cj-icon-example-compare:nth-child(5) .cj-compare-icon {
-  color: #28a745 !important;
-  /* Green for Excel */
-}
-
-.cj-icon-example-compare:nth-child(6) .cj-compare-icon {
-  color: #6f42c1 !important;
-  /* Purple for Video */
-}
-
-.cj-icon-example-compare:nth-child(7) .cj-compare-icon {
-  color: #17a2b8 !important;
-  /* Cyan for Arrow */
-}
-
-.cj-icon-example-compare:nth-child(8) .cj-compare-icon {
-  color: #6c757d !important;
-  /* Gray for Bullet */
-}
-
-.cj-icon-example-compare:nth-child(9) .cj-compare-icon {
-  color: #198754 !important;
-  /* Dark Green for Phone */
-}
-
-.cj-icon-example-compare:nth-child(10) .cj-compare-icon {
-  color: #fd7e14 !important;
-  /* Orange for External Link */
-}
-
-/* Hover effects for icon types */
-.cj-icon-example-compare:hover .cj-compare-icon {
-  filter: brightness(1.2);
-  transform: scale(1.1);
-  transition: all 0.2s ease;
-}
-
-/* Responsive adjustments for icon comparison */
-@media (max-width: 1200px) {
-  .cj-icon-comparison-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .cj-icon-comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .cj-icon-library {
-    padding: 1rem;
   }
 }
