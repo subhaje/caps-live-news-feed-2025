@@ -35,7 +35,8 @@ html {
 
 @font-face {
   font-family: "Helvetica-Neue-UltraLightItalic";
-  src: url("./helvetica-neue-5/HelveticaNeueUltraLightItalic.otf") format("opentype");
+  src: url("./helvetica-neue-5/HelveticaNeueUltraLightItalic.otf")
+    format("opentype");
   font-weight: 100;
   font-style: italic;
 }
@@ -91,7 +92,8 @@ html {
 
 @font-face {
   font-family: "Helvetica-Neue-MediumItalic";
-  src: url("./helvetica-neue-5/HelveticaNeueMediumItalic.otf") format("opentype");
+  src: url("./helvetica-neue-5/HelveticaNeueMediumItalic.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
 }
@@ -271,11 +273,11 @@ html {
 }
 
 .cj-quick-fixes-box .cj-section-title {
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 .cj-quick-fixes-box .cj-news-article {
-  margin-bottom: 6px;
+  margin-bottom: 11px;
 }
 
 .cj-quick-fixes-box .cj-news-desc {
@@ -425,7 +427,6 @@ html {
 }
 
 @media (max-width: 600px) {
-
   .cj-header,
   .cj-container,
   .cj-aside,
